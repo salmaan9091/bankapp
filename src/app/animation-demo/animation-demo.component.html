@@ -1,0 +1,4 @@
+<div [@openClose]="isOpen?'open':'close'">
+    <h1>I am {{isOpen?"open":"close"}}</h1>
+    <button (click)="trigger()" class="btn btn-danger">Toggle</button>
+</div>

@@ -1,0 +1,21 @@
+.row{
+    height: 100px;
+    
+}
+.table{
+    margin-top: 50px;
+    margin-bottom: 400px;
+}
+.table{
+    background-color: rgb(7, 7, 47);
+   color: white;
+}
+
+h1{
+    padding-top: 40px;
+    color: white;
+    text-align: center;
+}
+.btn{
+    align-items: center;
+}

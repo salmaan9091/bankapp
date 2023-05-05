@@ -1,0 +1,75 @@
+<section class="vh-100 gradient-custom">
+   <h3>I am {{cuser|uppercase}}</h3>
+   <h4>{{dd|date:'YYYY-MMMM-dd'}}</h4>
+   <app-delete-confirm (onCancel)="canceldelete()" (onDelete)="deleteaccount($event)" [item]="acno"></app-delete-confirm>
+   <!-- <app-animation-demo></app-animation-demo> -->
+   <a routerLink="/trans">View Transation History</a>
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-6 col-md-8 col-lg-6 col-xl-5" [ngClass]="acno?'c1':''">
+
+          <div class="card  text-white " style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="login mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">DEPOSITE</h2>
+                <form [formGroup]="dform" (ngSubmit)="clicked()">
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typeEmailX">Account Number</label>
+                  <input type="email" id="typeEmailX"  class="form-control form-control-lg" formControlName="dacc">
+                  <div *ngIf="this.dform.get('dacc')?.touched && this.dform.get('dacc')?.errors" class="text-danger">The Value Insert is Invalid</div> 
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typePasswordX">Password</label>
+                  <input type="password" id="typePasswordX"  class="form-control form-control-lg" formControlName="dpass" />
+                  <div *ngIf="this.dform.get('dpass')?.touched && this.dform.get('dpass')?.errors" class="text-danger">The Value Insert is Invalid</div>
+
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typePasswordX">Amount</label>
+                  <input type="" id="typePasswordX"  class="form-control form-control-lg"formControlName="damnt" />
+                  <div *ngIf="this.dform.get('damnt')?.touched && this.dform.get('damnt')?.errors" class="text-danger">The Value Insert is Invalid</div>
+                </div><br>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">DEPOSITE</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+    
+        <div class="col-6 col-md-8 col-lg-6 col-xl-5"[ngClass]="acno?'c1':''">
+          <div class="card  text-white " style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="login mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase"></h2>
+                <h2 class="fw-bold mb-2 text-uppercase">WITHDRAW</h2>
+                <form [formGroup]="wform" (ngSubmit)="clicked1()">
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typeEmailX">Account Number</label>
+                  <input type="email" id="typeEmailX"  class="form-control form-control-lg" formControlName="wacc"> 
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typePasswordX">Password</label>
+                  <input type="password" id="typePasswordX"  class="form-control form-control-lg" formControlName="wpass" />
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typePasswordX">Amount</label>
+                  <input type="number" id="typePasswordX"  class="form-control form-control-lg" formControlName="wamnt"/>
+                </div><br>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit" >WITHDRAW</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+     </div>
+     <br>
+  <button class="btn btn-warning mr-3" id="logo" (click)="logout()">LOGOUT</button>
+  <button class="btn btn-danger mr-3" id="logo1" (click)="deleteacc()">DELETE ACCOUNT</button><br>
+</section>
